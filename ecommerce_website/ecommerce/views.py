@@ -164,3 +164,18 @@ def order_complete(request):
     if request.session.has_key('cart'):
         del request.session['cart']
     return response
+
+def good_add(request, product_id):
+    """
+    言い値ボタン！
+    """
+
+    product = Product.objects.filter(id__in=product_id).first()
+    product.good += 1
+    product.save()
+
+    products = get_list_or_404(Product)
+
+    response = redirect('/ec/list/', {'products': products})
+
+    return response
