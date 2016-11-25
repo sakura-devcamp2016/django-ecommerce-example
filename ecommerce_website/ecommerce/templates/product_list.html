@@ -3,6 +3,7 @@
 <a href="../order/">注文する</a>
 {% for product in products %}
     <h1>{{ product.name }}</h1>
+    <p><a href="../good_add/{{ product.id }}">いいね！</a>{{ product.good }}</p>
     <img src="../../media/{{ product.image }}" alt="" width="200" height="200" border="0" />
     <a href="../cart_add/{{ product.id }}">カートに入れる</a>
 {% endfor %}

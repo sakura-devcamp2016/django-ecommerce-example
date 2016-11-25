@@ -21,7 +21,8 @@ class Product(models.Model):
     is_enabled = models.BooleanField("商品の販売状態", default=True)
     created_at = models.DateTimeField("作成日時", auto_now_add=True)
     updated_at = models.DateTimeField("更新日時", auto_now=True)
-
+    good = models.IntegerField("いいね", default=0)
+    
     def __str__(self):
         return self.name
 
